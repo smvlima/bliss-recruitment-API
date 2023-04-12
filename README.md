@@ -31,6 +31,7 @@ npm install -g @angular/cli
 ## running the software
 
 1st step:
+
 navigate to the app folder using the following command:
 ```bash
 cd app
