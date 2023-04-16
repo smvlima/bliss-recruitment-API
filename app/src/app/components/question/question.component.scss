@@ -1,0 +1,13 @@
+.container {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+}
+.container__image {
+
+  img {
+    max-width: 100%;
+  }
+}
+.container__share {
+  grid-column: 1/5;
+}

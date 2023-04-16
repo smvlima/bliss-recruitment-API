@@ -1,0 +1,17 @@
+
+<div class="container" *ngIf="question">
+  <div class="container__image">
+    <img src="{{question.image_url}}">
+  </div>
+  <div class="container__details">
+    <h2>{{question.question}}</h2>
+    <p>Answers</p>
+    <ul>
+      <li *ngFor="let choice of question.choices">{{choice.choice}} <span>{{choice.votes}}</span></li>
+    </ul>
+  </div>
+  <div class="container__share">
+    <input class="share__input" type="text" placeholder="E-mail" [(ngModel)]="email">
+    <button (click)="share()" ><i class="fa-solid fa-share-nodes"></i></button>
+  </div>
+</div>
