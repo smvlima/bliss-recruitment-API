@@ -23,7 +23,7 @@ open the terminal in the cloned folder location.
 
 __4th step:__
 
-install angular running the following command:
+install all the project dependencies running the following command:
 ```bash
 npm install -g @angular/cli
 ```
