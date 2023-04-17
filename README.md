@@ -25,7 +25,7 @@ __4th step:__
 
 install all the project dependencies running the following command:
 ```bash
-npm install -g @angular/cli
+npm install
 ```
 
 ## running the software
