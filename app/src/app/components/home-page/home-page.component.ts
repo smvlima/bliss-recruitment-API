@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home-page',
@@ -7,7 +8,7 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./home-page.component.scss'],
 })
 export class HomePageComponent {
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private router: Router) {}
   status: string = '';
   async connect() {
     this.status = 'loading';
@@ -17,6 +18,7 @@ export class HomePageComponent {
       )
       .subscribe((response: any) => {
         this.status = response['status'];
+     
       });
   }
 }

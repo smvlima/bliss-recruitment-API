@@ -1,0 +1,28 @@
+.container {
+  width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.container__back {
+  position: fixed;
+  top: 2rem;
+  left: 2rem;
+  font-size: 2rem;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  color: var(--highlight-color);
+  &:hover {
+    text-shadow: 1px 1px 1px var(--shadow-color);
+  }
+}
+
+.container__question {
+  position: relative;
+  padding: 2rem;
+  border-radius: 2rem;
+  background-color: var(--secondary-color);
+}

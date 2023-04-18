@@ -9,7 +9,10 @@ import { ListScreenComponent } from './components/list-screen/list-screen.compon
 import { RetryActionComponent } from './components/retry-action/retry-action.component';
 import { HomePageComponent } from './components/home-page/home-page.component';
 import { QuestionComponent } from './components/question/question.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { PageQuestionComponent } from './components/page-question/page-question.component';
+import { NoConnectivityComponent } from './components/no-connectivity/no-connectivity.component';
+import { ShareScreenComponent } from './components/share-screen/share-screen.component';
 
 @NgModule({
   declarations: [
@@ -18,13 +21,17 @@ import { FormsModule } from '@angular/forms';
     ListScreenComponent,
     RetryActionComponent,
     HomePageComponent,
-    QuestionComponent
+    QuestionComponent,
+    PageQuestionComponent,
+    NoConnectivityComponent,
+    ShareScreenComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Question } from '../../interfaces/question';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-list-screen',
@@ -8,12 +9,31 @@ import { Question } from '../../interfaces/question';
   styleUrls: ['./list-screen.component.scss'],
 })
 export class ListScreenComponent implements OnInit {
-  constructor(private http: HttpClient) {}
+  constructor(
+    private http: HttpClient,
+    private route: ActivatedRoute,
+    private router: Router
+  ) {}
+
   textSearch: string = '';
   questionsList: Question[] = [];
   selectedList: number[] = [];
-  offset: number = 10;
-  async ngOnInit(): Promise<void> {
+  offset: number = 0;
+  hideShareDetails: boolean = true;
+  url!: string;
+  ngOnInit(): void {
+    if (this.router.routerState.snapshot.root.queryParams['filter'] != null) {
+      this.textSearch =
+        this.router.routerState.snapshot.root.queryParams['filter'];
+    }
+    if (this.textSearch === '') {
+      this.getData();
+    }
+    if (this.textSearch != '') {
+      this.search();
+    }
+  }
+  async getData() {
     await this.http
       .get(
         `https://private-anon-045b5fa334-blissrecruitmentapi.apiary-mock.com/questions?limit=10&offset=${this.offset}`
@@ -34,16 +54,28 @@ export class ListScreenComponent implements OnInit {
   }
   loadMore() {
     this.offset += 10;
+    this.getData();
   }
   async search() {
-    this.offset = 10;
-    await this.http.get(
-      `https://private-anon-045b5fa334-blissrecruitmentapi.apiary-mock.com/questions?limit=10&offset=${this.offset}&filter=${this.textSearch}`
-    ) .subscribe((response: any) => {
-      this.questionsList = response;
-    });
+    this.offset = 0;
+    await this.http
+      .get(
+        `https://private-anon-045b5fa334-blissrecruitmentapi.apiary-mock.com/questions?limit=10&offset=${this.offset}&filter=${this.textSearch}`
+      )
+      .subscribe((response: any) => {
+        this.questionsList = response;
+      });
   }
   closeSearch() {
     this.textSearch = '';
+    this.router.navigate(['/questions']).then(() => window.location.reload());
+  }
+  showShareDetails() {
+    if (this.textSearch === '') {
+      this.url = `${window.location.origin}/questions`;
+    } else {
+      this.url = `${window.location.origin}/questions?filter=${this.textSearch}`;
+    }
+    this.hideShareDetails = false;
   }
 }

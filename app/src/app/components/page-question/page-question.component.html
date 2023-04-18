@@ -1,0 +1,7 @@
+<div class="container">
+  <button class="container__back" (click)="goBack()"><i class="fa-solid fa-arrow-left"></i></button>
+  <app-loading-screen *ngIf="questionId == ''"></app-loading-screen>
+  <div class="container__question" *ngIf="questionId != ''">
+    <app-question   questionId={{questionId}}></app-question>
+  </div>
+</div>

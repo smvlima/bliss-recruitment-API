@@ -4,14 +4,15 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family:  Calibri, 'Trebuchet MS', sans-serif;
 }
 
 :root {
-  --primary-color: #f6fedbff;
-  --secondary-color: #e6d3a3ff;
-  --medium-highlight: #d8d174ff;
-  --shadow-color: #b6c454ff;
-  --highlight-color: #91972aff;
+  --primary-color: #f0faff;
+  --secondary-color: #9fbdbd;
+  --medium-highlight: #ccebe5;
+  --shadow-color: rgb(211, 211, 211);
+  --highlight-color: #57696d;
 }
 
 body {

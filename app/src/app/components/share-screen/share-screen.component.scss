@@ -1,0 +1,78 @@
+
+
+.share__popup {
+  z-index: 2;
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  background-color: rgba(193, 193, 193, 0.405);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.share__box {
+  position: relative;
+  padding: 2rem;
+  background-color: var(--primary-color);
+  width: 50%;
+  height: fit-content;
+  border-radius: 2rem;
+  box-shadow: 2px 2px 5px var(--shadow-color);
+
+}
+
+.share__block {
+  font-size: 1.5rem;
+  border-radius: 1rem;
+  margin: .9rem 0;
+  padding: 1rem;
+}
+
+.share__title {
+  text-align: left;
+  color: var(--highlight-color);
+  font-size: 2rem;
+}
+
+.share__action {
+  display: inline-flex;
+
+  width: 100%;
+  gap: .5rem;
+  align-items: stretch;
+}
+
+.share__input {
+  font-size: 1.5rem;
+  outline: none;
+  padding: .2rem;
+  text-indent: .4rem;
+  flex-grow: 2;
+  border-radius: .2rem;
+  border: 1px solid var(--shadow-color);
+}
+
+.share__input[readonly="readonly"] {
+  background-color: var(--medium-highlight);
+  pointer-events: none;
+}
+
+.share__cta {
+  font-size: 1.5rem;
+  color: var(--highlight-color);
+  border: none;
+  background-color: transparent;
+  outline: none;
+  &:hover {
+    text-shadow: 1px 1px 1px var(--shadow-color);
+  }
+}
+
+.share__close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+}
