@@ -28,6 +28,7 @@ export class ShareScreenComponent {
         )
         .subscribe(
           (response) => {
+            alert('Email Sent!');
            },
           (error) => {
             console.log(error);
@@ -36,7 +37,7 @@ export class ShareScreenComponent {
     }
     copyMessage() {
       navigator.clipboard.writeText(this.url).then(() => {
-        console.log(this.url);
+        alert('Copy to Clipboard!');
       });
     }
     hideShareDetails() {
