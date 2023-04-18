@@ -1,0 +1,19 @@
+.container{
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  position: fixed;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(193, 193, 193, 0.405);
+}
+.container__no__connection{
+  padding: 2rem;
+  border-radius: 1rem;
+  width: 30%;
+  background-color: var(--primary-color);
+}
+.container__description{}

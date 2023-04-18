@@ -1,1 +1,23 @@
 /* You can add global styles to this file, and also import other style files */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family:  Calibri, 'Trebuchet MS', sans-serif;
+}
+
+:root {
+  --primary-color: #f0faff;
+  --secondary-color: #9fbdbd;
+  --medium-highlight: #ccebe5;
+  --shadow-color: rgb(211, 211, 211);
+  --highlight-color: #57696d;
+}
+
+body {
+  background-color: var(--primary-color);
+}
+button, a {
+  cursor: pointer;
+}

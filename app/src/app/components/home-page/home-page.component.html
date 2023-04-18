@@ -1,0 +1,9 @@
+<div class="container">
+  <button class="container__cta" *ngIf="status ===''" (click)="connect()"> Connect </button>
+  <app-loading-screen *ngIf="status === 'loading'"></app-loading-screen>
+  <app-list-screen class="app-list-screen" *ngIf="status === 'OK'"></app-list-screen>
+  <div>
+    <button *ngIf="status === 'Service Unavailable. Please try again later.'" class="container__cta"
+      (click)="connect()"> Try Again </button>
+  </div>
+</div>

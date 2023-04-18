@@ -1,0 +1,31 @@
+<div class="container">
+  <div class="container__search">
+    <input class="search__input" type="text" placeholder="Search" [(ngModel)]="textSearch">
+    <div class="search__cta__box"><button class="search__cta search__btn" [ngClass]="{disable__search: textSearch===''}"
+        (click)="search()"><i class="fa-solid fa-paper-plane"></i></button><button class="search__cta close__btn"
+        [ngClass]="{disable__search: textSearch===''}" (click)="closeSearch()"><i
+          class="fa-solid fa-circle-xmark"></i></button>
+
+    </div>
+  </div>
+  <ul class="container__box">
+    <li class="container__item" *ngFor="let question of questionsList">
+      <p class="item__expand" [ngClass]="{item__selected: selectedList.includes(question.id)}"
+        (click)="select(question.id)">
+        <i class="fa-solid fa-caret-down"></i>
+      </p>
+      <div *ngIf="!selectedList.includes(question.id)" class="item__box" (click)="select(question.id)">
+        <img class="item__image" src="{{question.thumb_url}}">
+        <h2 class="item__title">{{question.question}}</h2>
+
+      </div>
+
+      <app-question *ngIf="selectedList.includes(question.id)" questionId={{question.id}}></app-question>
+    </li>
+  </ul>
+  <button class="search__cta" (click)="loadMore()"><i class="fa-solid fa-plus"></i></button>
+  <button class="share__cta" (click)="showShareDetails()"> <i class="fa-solid fa-share-nodes"></i></button>
+
+  <app-share-screen *ngIf="!hideShareDetails" url="{{ url }}" (close)="hideShareDetails = true"></app-share-screen>
+
+</div>

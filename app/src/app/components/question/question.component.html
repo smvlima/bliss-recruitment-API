@@ -1,0 +1,23 @@
+<div class="container" *ngIf="question">
+  <div class="container__image">
+    <img src="{{question.image_url}}">
+  </div>
+  <div class="container__details">
+    <h2 class="details__title">{{question.question}}</h2>
+    <p class="details__answers">Answers</p>
+    <div class="details__choices">
+      <button  class="details__choice" *ngFor="let choice of question.choices" (click)="vote(question.id,choice.choice, choice.votes)">
+       {{choice.choice}}
+      </button>
+    </div>
+  </div>
+  <div class="container__share">
+    <button class="share__cta" (click)="showShareDetails()" value="click to share">
+      <i class="fa-solid fa-share-nodes"></i>
+    </button>
+
+<app-share-screen *ngIf="!hideShareDetails" url="{{ url }}" (close)="hideShareDetails = true"></app-share-screen>
+
+
+  </div>
+</div>

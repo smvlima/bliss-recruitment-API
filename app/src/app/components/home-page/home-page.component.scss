@@ -1,0 +1,25 @@
+.container {
+  margin: 0 auto;
+  width: 80vw;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container__cta {
+  font-size: 1.5rem;
+  padding: 1rem;
+  border-radius: 16px;
+  border:none;
+  background-color: var(--highlight-color);
+  color: var(--primary-color);
+  font-weight: 800;
+  transition: 250ms ease-in-out;
+  &:hover {
+    transform: scale(1.1);
+    box-shadow: 2px 2px 5px var(--shadow-color);
+  }
+}
+.app-list-screen {
+  width: 100% ;
+}

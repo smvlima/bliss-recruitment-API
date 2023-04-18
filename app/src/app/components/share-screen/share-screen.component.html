@@ -1,0 +1,31 @@
+<div class="share__popup">
+  <div class="share__box">
+    <h3 class="share__title">Share</h3>
+    <div class="share__block">
+      <h4 class="share__subtitle">Enter e-mail</h4>
+      <div class="share__action">
+
+        <input class="share__input" type="email" placeholder="email" [(ngModel)]="email" />
+        <button class="share__cta" (click)="share()" value="click to send">
+          <i class="fa-solid fa-paper-plane"></i>
+        </button>
+      </div>
+    </div>
+
+    <div class="share__block">
+      <h4 class="share__subtitle">Page Link</h4>
+      <div class="share__action">
+
+        <input class="share__input" type="text" value="{{ url }}" readonly="readonly" />
+
+        <button class="share__cta" (click)="copyMessage()" value="click to copy" title="click to copy">
+          <i class="fa-solid fa-copy"></i>
+        </button>
+      </div>
+    </div>
+
+    <button class="share__cta share__close" (click)="hideShareDetails()" value="click to close">
+      <i class="fa-solid fa-xmark"></i>
+    </button>
+  </div>
+</div>
